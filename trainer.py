@@ -74,7 +74,7 @@ class PreTrainer(BaseTrainer):
         scheduler = get_linear_schedule_with_warmup(
             optimizer, args.warmup_steps, args.steps)
         data_loader, _, _, _ = get_dataloader(args.dataset, args.batch_size, args.workers,
-                                                        train_val_split=1.0, model_name=args.model_name)
+                                              train_val_split=1.0, model_name=args.model_name)
 
         train_iter = InfIterator(data_loader)
 
@@ -180,7 +180,7 @@ class SelfPreTrainer(BaseTrainer):
         scheduler = get_linear_schedule_with_warmup(
             optimizer, args.warmup_steps, args.steps)
         data_loader, _, _, _ = get_dataloader(args.dataset, args.batch_size, args.workers,
-                                                        train_val_split=1.0, model_name=args.model_name)
+                                              train_val_split=1.0, model_name=args.model_name)
 
         train_iter = InfIterator(data_loader)
         mse_criterion = nn.MSELoss(reduction="sum")
