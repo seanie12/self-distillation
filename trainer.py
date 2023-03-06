@@ -179,7 +179,7 @@ class SelfPreTrainer(BaseTrainer):
 
         scheduler = get_linear_schedule_with_warmup(
             optimizer, args.warmup_steps, args.steps)
-        data_loader, _, test_loader, _ = get_dataloader(args.dataset, args.batch_size, args.workers,
+        data_loader, _, _, _ = get_dataloader(args.dataset, args.batch_size, args.workers,
                                                         train_val_split=1.0, model_name=args.model_name)
 
         train_iter = InfIterator(data_loader)
@@ -315,6 +315,5 @@ class FinetuningTrainer(BaseTrainer):
         # test loss and test accuracy
         test_acc, test_loss = test(model, test_loader, device)
         # full batch training loss and training accuracy
-        train_acc, train_loss = test(model, train_loader, device)
         print("Test loss:{:.4f}, Test accuracy: {:.4f}".format(
             test_loss, test_acc))
