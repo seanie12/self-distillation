@@ -1,3 +1,9 @@
+## Download dataset
+Download data.tar.gz and 
+```
+tar zxvf data.tar.gz
+```
+
 ## Fine-tuning from pre-trained ViT
 ```bash 
 bash run_finetune.sh "GPU number" "dataset" True
@@ -11,7 +17,7 @@ bash run_pretrain.sh "GPU number" "dataset"
 
 ## Fine-tuning from further pre-trained model
 ```bash 
-bash run_finetune.sh "GPU number" "dataset" False further-pretrain-2000
+bash run_finetune.sh "GPU number" "dataset"
 ```
 
 
@@ -19,7 +25,7 @@ bash run_finetune.sh "GPU number" "dataset" False further-pretrain-2000
 After run pre-training the following command.
 
 ```bash
-bash run_selftrain.sh "GPU number" "dataset" further-pretrain-20000
+bash run_selftrain.sh "GPU number" "dataset" 
 ```
 
 
