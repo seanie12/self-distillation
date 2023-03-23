@@ -14,20 +14,20 @@ Run the following command. The dataset can be either aircraft, chest_xray, cub, 
 bash run_pretrain.sh "GPU number" "dataset"
 ```
 
-## Step 3. Self distillation
+## Step 3. Self distillation.
 After  further pre-training, run the following command for self-distillation. The dataset can be either aircraft, chest_xray, cub, dtd, stanford_dogs or  vgg_flower_102.
 
 ```bash
 bash run_selftrain.sh "GPU number" "dataset" 
 ```
 
-## Step 4.Fine-tuning from self-distilled model
+## Step 4.Fine-tuning from self-distilled model.
 The dataset can be either aircraft, chest_xray, cub, dtd, stanford_dogs or  vgg_flower_102.
 ```bash 
 bash run_finetune.sh "GPU number" "dataset"
 ```
 
-## (Optional) Fine-tuning from further pre-trained model
+## (Optional) Fine-tuning from further pre-trained model.
 The dataset can be either aircraft, chest_xray, cub, dtd, stanford_dogs or  vgg_flower_102.
 ```bash 
 bash run_finetune.sh "GPU number" "dataset" false further-pretrain-20000
@@ -40,7 +40,7 @@ bash run_finetune.sh "GPU number" "dataset" True
 ```
 
 ## Reference
-To cite the code/data/paper, please use this BibTex
+To cite the code/data/paper, please use this BibTex.
 
 ```bibtex
 @inproceedings{
