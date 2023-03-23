@@ -1,5 +1,5 @@
 ## Download dataset
-Download data.tar.gz and 
+Download data.tar.gz from [here](https://drive.google.com/file/d/1euERDA5E8CpeCy7RHi2YGQeGRNQwoYeV/view?usp=sharing) and 
 ```
 tar zxvf data.tar.gz
 ```
