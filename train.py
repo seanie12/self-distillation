@@ -5,7 +5,7 @@ from utils import str2bool
 
 
 def run(args):
-    trainer_dict = {"finetune": FinetuningTrainer,  "pretrain": PreTrainer, 
+    trainer_dict = {"finetune": FinetuningTrainer,  "pretrain": PreTrainer,
                     "self-pretrain": SelfPreTrainer}
     print("stage:", args.stage)
     trainer = trainer_dict[args.stage](args)
@@ -23,7 +23,6 @@ if __name__ == "__main__":
     parser.add_argument("--steps", type=int, default=10000)
     parser.add_argument("--warmup_steps", type=int, default=500)
 
-    
     parser.add_argument('--batch_size', default=64, type=int,
                         help='Batch size per GPU (effective batch size is batch_size * accum_iter * # gpus')
     parser.add_argument("--norm_pix_loss", default="True", type=str2bool)
@@ -33,7 +32,8 @@ if __name__ == "__main__":
     parser.add_argument("--plot", type=str2bool, default="false")
     parser.add_argument("--model_name", type=str,
                         default="facebook/vit-mae-base")
-    parser.add_argument("--dataset", type=str, default="cifar100")
+    parser.add_argument("--dataset", type=str, default="cifar10", choices=[
+                        "aircraft", "chest_xray", "cub", "dtd", "stanford_dogs", "vgg_flower_102", "cifar10"])
     parser.add_argument("--gpu", type=int, default=0)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--ckpt_name", type=str)
