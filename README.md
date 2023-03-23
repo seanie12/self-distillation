@@ -1,36 +1,33 @@
-## Download dataset
+## Step 1. Download dataset
 Download data.tar.gz from [here](https://drive.google.com/file/d/1euERDA5E8CpeCy7RHi2YGQeGRNQwoYeV/view?usp=sharing) and 
 ```
 tar zxvf data.tar.gz
 ```
 
 
-## Further pre-training
+## Step 2. Further pre-training
 ```bash
 bash run_pretrain.sh "GPU number" "dataset"
 ```
 
-## Fine-tuning from further pre-trained model
-```bash 
-bash run_finetune.sh "GPU number" "dataset"
-```
-
-
-## Self distillation
-After run pre-training the following command.
+## Step 3. Self distillation
+After  further pre-training, run the following command for self-distillation.
 
 ```bash
 bash run_selftrain.sh "GPU number" "dataset" 
 ```
 
-
-## Fine-tuning from self-distilled model
+## Step 4.Fine-tuning from self-distilled model
 ```bash 
-bash run_finetune.sh "GPU number" "dataset" False self-further-pretrain-20000
+bash run_finetune.sh "GPU number" "dataset"
 ```
 
+## (Optional) Fine-tuning from further pre-trained model
+```bash 
+bash run_finetune.sh "GPU number" "dataset" false further-pretrain-20000
+```
 
-## Fine-tuning from pre-trained ViT without any further pre-training or self-distillation.
+## (Optional) Fine-tuning from pre-trained ViT without any further pre-training or self-distillation.
 ```bash 
 bash run_finetune.sh "GPU number" "dataset" True
 ```
